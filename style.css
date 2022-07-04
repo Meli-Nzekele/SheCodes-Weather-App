@@ -86,14 +86,12 @@ a:hover {
   color: #7a757d;
   border: 1px solid #7a757d;
   margin: 0 10px 0 20px;
-  box-shadow: none;
 }
 
 .current-btn {
   color: #7a757d;
   border: 1px solid #7a757d;
   margin: 0 auto;
-  box-shadow: none;
 }
 
 .search-btn:hover,
@@ -101,7 +99,6 @@ a:hover {
   color: #f5b048;
   background-color: #fff;
   border: 1px solid #7a757d;
-  box-shadow: none;
 }
 
 #icon {
