@@ -39,6 +39,8 @@ function showTemperature(response) {
   cityTemperature.innerHTML = Math.round(response.data.main.temp);
 
   celsuisTemperature = Math.round(response.data.main.temp);
+  maxCelsuisTemperature = Math.round(response.data.main.temp_max);
+  minCelsuisTemperature = Math.round(response.data.main.temp_min);
 
   let displayMaxTemp = Math.round(response.data.main.temp_max);
   let showMaxTemp = document.querySelector("#maxTemp");
@@ -99,6 +101,14 @@ function displayfahrenheitTemperature(event) {
   let fahrenheitTemperature = (celsuisTemperature * 9) / 5 + 32;
   let cityTemperature = document.querySelector("#temp-number");
   cityTemperature.innerHTML = Math.round(fahrenheitTemperature);
+
+  let maxFahrenheitTemperature = (maxCelsuisTemperature * 9) / 5 + 32;
+  let displayMaxTemp = document.querySelector("#maxTemp");
+  displayMaxTemp.innerHTML = `High: ${Math.round(maxFahrenheitTemperature)}°F`;
+
+  let minFahrenheitTemperature = (minCelsuisTemperature * 9) / 5 + 32;
+  let displayMinTemp = document.querySelector("#minTemp");
+  displayMinTemp.innerHTML = `Low: ${Math.round(minFahrenheitTemperature)}°F`;
 }
 
 let fahrenheitLink = document.querySelector("#temp-fahrenheit");
@@ -108,6 +118,12 @@ function displayCelsuisTemperature(event) {
   event.preventDefault();
   let cityTemperature = document.querySelector("#temp-number");
   cityTemperature.innerHTML = Math.round(celsuisTemperature);
+
+  let displayMaxTemp = document.querySelector("#maxTemp");
+  displayMaxTemp.innerHTML = `High: ${Math.round(maxCelsuisTemperature)}°C`;
+
+  let displayMinTemp = document.querySelector("#minTemp");
+  displayMinTemp.innerHTML = `Low: ${Math.round(minCelsuisTemperature)}°C`;
 }
 
 let celsuisLink = document.querySelector("#temp-celsius");
