@@ -89,13 +89,17 @@ a:hover {
 }
 
 .current-btn {
+  font-size: 40px;
   color: #7a757d;
-  border: 1px solid #7a757d;
   margin: 0 auto;
+  margin-left: 10px;
 }
 
-.search-btn:hover,
 .current-btn:hover {
+  color: #ffcc7f;
+}
+
+.search-btn:hover {
   color: #f5b048;
   background-color: #fff;
   border: 1px solid #7a757d;
