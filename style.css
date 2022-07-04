@@ -1,0 +1,139 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: 55px;
+  color: #7a757d;
+  margin: 15px 30px;
+}
+
+h2 {
+  font-size: 40px;
+  text-align: center;
+  color: #7a757d;
+}
+
+h3 {
+  font-size: 14px;
+  text-align: center;
+  color: #565556;
+  margin-top: 10px;
+}
+
+.weather-app {
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 20px;
+  max-width: 600px;
+  border: 3px solid #ffe4bb;
+  border-radius: 10px;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.1);
+}
+
+.city-date-time {
+  padding: 5px 0;
+  color: #565556;
+  margin-left: 30px;
+}
+
+.side-details {
+  position: sticky;
+  font-size: 9px;
+  color: #7a757d;
+  margin-top: 100px;
+  margin-right: 40px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #595859;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #7a757d;
+  text-decoration: none;
+}
+
+.display-temperature {
+  font-size: 40px;
+  color: #7a757d;
+  margin-left: 10px;
+  margin-bottom: 50px;
+}
+
+#temp-number {
+  font-size: 60px;
+}
+
+#temp-celsius {
+  font-weight: 100;
+}
+
+#search-form {
+  max-width: 500px;
+  display: block;
+  margin: 20px auto;
+}
+.search-btn {
+  color: #7a757d;
+  border: 1px solid #7a757d;
+  margin: 0 10px 0 20px;
+}
+
+.current-btn {
+  color: #7a757d;
+  border: 1px solid #7a757d;
+  margin: 0 auto;
+}
+
+.search-btn:hover,
+.current-btn:hover {
+  color: #f5b048;
+  background-color: #fff;
+  border: 1px solid #7a757d;
+}
+
+.weather-icon {
+  font-size: 140px;
+  margin-left: 50px;
+  padding: 0;
+  color: #f9ca82;
+}
+
+.display-temperature {
+  font-size: 30px;
+  color: #7a757d;
+}
+
+hr {
+  line-height: 3em;
+  color: #f9ca82;
+}
+
+.five-day {
+  font-size: 14px;
+  text-align: center;
+  color: #565556;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.weather-icon-day {
+  font-size: 30px;
+  color: #f9ca82;
+  margin-bottom: 10px;
+  padding: 11px;
+  border: 1px solid rgba(0, 0, 255, 0.1);
+  box-shadow: 10px 10px 2px 1px rgba(0, 0, 255, 0.1);
+}
+
+.page-footer {
+  color: #7a757d;
+  font-size: 10px;
+  text-align: center;
+}
