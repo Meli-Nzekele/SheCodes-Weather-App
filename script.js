@@ -24,7 +24,7 @@ let days = [
 ];
 
 let dayHour = document.querySelector("#city-date-time");
-dayHour.innerHTML = `${days[dayToday]} ${hours}:${minutes}`;
+dayHour.innerHTML = `Last Updated: ${days[dayToday]} ${hours}:${minutes}`;
 
 // Search Bar/ Geolocation
 
