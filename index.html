@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Weather App</title>
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:wght@100;400;500&display=swap"
+        rel="stylesheet">
+    <!-- weather icons-->
+    <script src="https://kit.fontawesome.com/a97a6c4a09.js" crossorigin="anonymous"></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="src/style.css" />
+    <!--Axios-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="weather-app">
+            <form class="d-flex search-bar" role="search" id="search-form">
+                <input class="form-control me-2" type="search" placeholder="Enter your city" id="city-input">
+                <button class="btn btn-outline-success search-btn" type="submit">Search</button>
+                <button class="btn btn-outline-success current-btn" type="submit">Current</button>
+
+            </form>
+            <h1 id="city-heading">
+
+            </h1>
+            <ul class="city-date-time">
+                <li id="city-date-time">
+
+                </li>
+                <li id="weathertype">
+
+                </li>
+            </ul>
+            <div class="row">
+                <div class="clearfix">
+                    <div class="float-right">
+                        <span class="display-temperature">
+                            <a href="#" id="temp-number"> </a>
+                            <a href="#" id="temp-celsius">°C | </a>
+                            <a href="#" id="temp-fahrenheit">°F</a>
+                        </span>
+                    </div>
+                    <i class="fa-solid fa-cloud-sun weather-icon float-right"></i>
+                </div>
+                <div class="col">
+                    <div class="clearfix">
+                        <div class="float-right">
+                            <ul class="side-details">
+                                <li id="maxTemp">
+                                    High: 77%
+                                </li>
+                                <li id="minTemp">
+                                    Low: 8 km/h
+                                </li>
+                                <li id="humidityInfo">
+                                    Humidity: 77%
+                                </li>
+                                <li id="windInfo">
+                                    Wind: 8 km/h
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <hr />
+            <!--5 day forecast-->
+            <div class="forecast-header">
+                <h2>Five Day Forecast</h2>
+            </div>
+            <div class="row five-day-forecast">
+                <div class="col five-day">
+                    <h3>Tuesday</h3>
+                    <br />
+                    <i class="fa-solid fa-sun weather-icon-day"></i>
+                    <br />
+                    <span class="high-temp">High: 26°</span>
+                    <br />
+                    <span class="low-temp"><em>Low: 11°</em></span>
+                </div>
+                <div class="col five-day">
+                    <h3>Wednesday</h3>
+                    <br />
+                    <i class="fa-solid fa-cloud-sun weather-icon-day"></i>
+                    <br />
+                    <span class="high-temp">High: 24°</span>
+                    <br />
+                    <span class="low-temp"><em>Low: 12°</em></span>
+                </div>
+                <div class="col five-day">
+                    <h3>Thursday</h3>
+                    <br />
+                    <i class="fa-solid fa-sun weather-icon-day"></i>
+                    <br />
+                    <span class="high-temp">High: 28°</span>
+                    <br />
+                    <span class="low-temp"><em>Low: 15°</em></span>
+                </div>
+                <div class="col five-day">
+                    <h3>Friday</h3>
+                    <br />
+                    <i class="fa-solid fa-cloud-sun-rain weather-icon-day"></i>
+                    <br />
+                    <span class="high-temp">High: 21°</span>
+                    <br />
+                    <span class="low-temp"><em>Low: 13°</em></span>
+                </div>
+                <div class="col five-day">
+                    <h3>Saturday</h3>
+                    <br />
+                    <i class="fa-solid fa-cloud-sun-rain weather-icon-day"></i>
+                    <br />
+                    <span class="high-temp">High: 19°</span>
+                    <br />
+                    <span class="low-temp"><em>Low: 10°</em></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Page footer-->
+    <footer class="footer">
+        <p class="page-footer">
+            <a href="https://github.com/Meli-Nzekele/SheCodes-Weather-App"><em>Open Source code</em></a>
+            by Melissa Nzekele
+            <br />
+            Icons from
+            <a href="https://fontawesome.com/icons" target="_blank">
+                <em>fontawesome</em>
+            </a>
+            <br />
+            Fonts from
+            <a href="https://fonts.google.com/" target="_blank">
+                <em>googlefonts</em>
+            </a>
+        </p>
+    </footer>
+    <!-- javascript-->
+    <script src="src/script.js"></script>
+</body>
+
+</html>
