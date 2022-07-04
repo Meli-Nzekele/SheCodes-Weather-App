@@ -29,8 +29,6 @@ dayHour.innerHTML = `${days[dayToday]} ${hours}:${minutes}`;
 // Search Bar/ Geolocation
 
 function showTemperature(response) {
-  console.log(response.data);
-
   let cityName = document.querySelector("h1");
   cityName.innerHTML = response.data.name;
 
@@ -87,18 +85,3 @@ let showCurrentLocation = document.querySelector(".current-btn");
 showCurrentLocation.addEventListener("click", getCurrentLocation);
 
 searchCity("London");
-
-// Convert to celsius & fahrenheit
-
-//function convertToFahrenheit(event) {
-//  event.preventDefault();
-//}
-
-//let showFahrenheit = document.querySelector("#temp-fahrenheit");
-//showFahrenheit.addEventListener("click", convertToFahrenheit);
-
-//function convertToCelsius(event) {
-//}
-
-//let showCelsius = document.querySelector("#temp-celsius");
-//showCelsius.addEventListener("click", convertToCelsius);
