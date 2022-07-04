@@ -38,6 +38,8 @@ function showTemperature(response) {
   let cityTemperature = document.querySelector("#temp-number");
   cityTemperature.innerHTML = Math.round(response.data.main.temp);
 
+  celsuisTemperature = Math.round(response.data.main.temp);
+
   let displayMaxTemp = Math.round(response.data.main.temp_max);
   let showMaxTemp = document.querySelector("#maxTemp");
   showMaxTemp.innerHTML = `High: ${displayMaxTemp}°C`;
@@ -53,6 +55,12 @@ function showTemperature(response) {
   let displayWind = Math.round(response.data.wind.speed);
   let showWind = document.querySelector("#windInfo");
   showWind.innerHTML = `Wind: ${displayWind}km/h`;
+
+  let displayMainIcon = document.querySelector("#icon");
+  displayMainIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function searchCity(city) {
@@ -83,5 +91,28 @@ function getCurrentLocation(event) {
 
 let showCurrentLocation = document.querySelector(".current-btn");
 showCurrentLocation.addEventListener("click", getCurrentLocation);
+
+// Convert temperature to celsius & fahrenheit
+
+function displayfahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsuisTemperature * 9) / 5 + 32;
+  let cityTemperature = document.querySelector("#temp-number");
+  cityTemperature.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+let fahrenheitLink = document.querySelector("#temp-fahrenheit");
+fahrenheitLink.addEventListener("click", displayfahrenheitTemperature);
+
+function displayCelsuisTemperature(event) {
+  event.preventDefault();
+  let cityTemperature = document.querySelector("#temp-number");
+  cityTemperature.innerHTML = Math.round(celsuisTemperature);
+}
+
+let celsuisLink = document.querySelector("#temp-celsius");
+celsuisLink.addEventListener("click", displayCelsuisTemperature);
+
+let celsuisTemperature = null;
 
 searchCity("London");
