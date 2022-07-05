@@ -132,3 +132,5 @@ celsuisLink.addEventListener("click", displayCelsuisTemperature);
 let celsuisTemperature = null;
 
 searchCity("London");
+
+// Weather Icons
