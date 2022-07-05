@@ -42,7 +42,6 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
-  console.log(response.data.daily);
 
   let forecastElement = document.querySelector("#forecast");
 
@@ -211,8 +210,5 @@ function displayCelsuisTemperature(event) {
 
 let celsuisLink = document.querySelector("#temp-celsius");
 celsuisLink.addEventListener("click", displayCelsuisTemperature);
-
-let celsuisTemperature = null;
-//
 
 searchCity("London");
