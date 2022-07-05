@@ -4,8 +4,8 @@
 
 h1 {
   font-size: 55px;
-  color: #7a757d;
-  margin: 15px 30px;
+  color: #5f5459;
+  margin: 10px 30px;
 }
 
 li {
@@ -24,13 +24,20 @@ a {
   max-width: 600px;
   border: 3px solid #ec6e4c;
   border-radius: 10px;
-  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.05);
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.06);
 }
 
 .city-date-time {
+  font-size: 12px;
   padding: 5px 0;
-  color: #565556;
+  color: #595356;
   margin-left: 30px;
+}
+
+#weathertype {
+  color: #8a888a;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 #search-form {
@@ -63,24 +70,29 @@ a {
 }
 
 #icon {
-  font-size: 100px;
-  max-height: 50vh;
   margin-left: 50px;
-  -webkit-box-reflect: below -50px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+  -webkit-box-reflect: below -50px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
 }
 
 .display-temperature,
 .temperature-line,
 .active {
-  color: #7a757d;
-  font-size: 40px;
+  color: #5f5459;
   margin: 0 auto;
 }
 
 #temp-number {
-  color: #7a757d;
+  color: #5f5459;
   font-size: 60px;
   text-decoration: none;
+}
+
+.temperature-line {
+  font-size: 40px;
+}
+
+#temp-celsius {
+  color: #5f5459;
 }
 
 #temp-fahrenheit {
@@ -89,6 +101,7 @@ a {
 
 #temp-celsius,
 #temp-fahrenheit {
+  font-size: 45px;
   text-decoration: none;
 }
 

@@ -147,6 +147,9 @@ function citySubmit(event) {
 
   let city = document.querySelector("#city-input").value;
   searchCity(city);
+
+  celsuisLink.style.color = "#5f5459";
+  fahrenheitLink.style.color = "#cdcccd";
 }
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", citySubmit);
@@ -160,6 +163,9 @@ function searchLocation(position) {
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
+
+  celsuisLink.style.color = "#5f5459";
+  fahrenheitLink.style.color = "#cdcccd";
 }
 
 let showCurrentLocation = document.querySelector(".current-btn");
@@ -184,13 +190,13 @@ function displayfahrenheitTemperature(event) {
   let displayMinTemp = document.querySelector("#minTemp");
   displayMinTemp.innerHTML = `Low: ${Math.round(minFahrenheitTemperature)}°F`;
 
-  let displayFahrenheitWind = celsuisWind * 3.6;
+  let displayFahrenheitWind = celsuisWind * 1.609344;
   let showFahrenheitWind = document.querySelector("#windInfo");
   showFahrenheitWind.innerHTML = `Wind: ${Math.round(
     displayFahrenheitWind
   )} km/h`;
 
-  fahrenheitLink.style.color = "#7a757d";
+  fahrenheitLink.style.color = "#5f5459";
   celsuisLink.style.color = "#cdcccd";
 }
 
@@ -214,7 +220,7 @@ function displayCelsuisTemperature(event) {
   let displayCelsuisWind = document.querySelector("#windInfo");
   displayCelsuisWind.innerHTML = `Wind: ${Math.round(celsuisWind)} mph`;
 
-  celsuisLink.style.color = "#7a757d";
+  celsuisLink.style.color = "#5f5459";
   fahrenheitLink.style.color = "#cdcccd";
 }
 
