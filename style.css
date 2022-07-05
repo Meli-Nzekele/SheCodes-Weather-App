@@ -83,7 +83,7 @@ a:hover {
 }
 
 .search-btn:hover {
-  color: #f5b048;
+  color: #ec6e4c;
   background-color: #fff;
   border: 1px solid #7a757d;
 }
@@ -96,7 +96,7 @@ a:hover {
 }
 
 .current-btn:hover {
-  color: #ffcc7f;
+  color: #ec6e4c;
 }
 
 #icon {
@@ -111,11 +111,6 @@ a:hover {
   color: #7a757d;
 }
 
-hr {
-  line-height: 3em;
-  color: #f9ca82;
-}
-
 .five-day {
   font-size: 14px;
   text-align: center;
@@ -125,10 +120,11 @@ hr {
 }
 .weather-icon-day {
   font-size: 30px;
-  color: #f9ca82;
+  color: #ec6e4c;
   margin-bottom: 10px;
   padding: 11px;
   border: 1px solid rgba(0, 0, 255, 0.1);
+  border-radius: 10px;
   box-shadow: 10px 10px 2px 1px rgba(0, 0, 255, 0.1);
 }
 
