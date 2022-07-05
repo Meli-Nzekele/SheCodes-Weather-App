@@ -1,0 +1,167 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: 55px;
+  color: #5f5459;
+  margin: 10px 30px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: default;
+}
+
+.weather-container {
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 20px;
+  max-width: 600px;
+  border: 3px solid #ec6e4c;
+  border-radius: 10px;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.06);
+}
+
+.city-date-time {
+  font-size: 12px;
+  padding: 5px 0;
+  color: #595356;
+  margin-left: 30px;
+}
+
+#weathertype {
+  color: #8a888a;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#search-form {
+  max-width: 500px;
+  display: block;
+  margin: 20px auto;
+}
+
+.form-control:focus {
+  border-color: #8a888a;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset,
+    0px 0px 8px rgba(58, 57, 58, 0.5);
+}
+
+.search-btn {
+  color: #7a757d;
+  border: 1px solid #7a757d;
+  margin: 0 10px 0 20px;
+}
+
+.search-btn:hover {
+  color: #ec6e4c;
+  background-color: #fff;
+  border: 1px solid #7a757d;
+}
+
+.current-btn {
+  font-size: 40px;
+  color: #7a757d;
+  margin: 0 auto;
+  margin-left: 10px;
+}
+
+.current-btn:hover {
+  color: #ec6e4c;
+}
+
+#icon {
+  font-size: 30px;
+  margin-left: 50px;
+  -webkit-box-reflect: below -50px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+}
+
+.display-temperature,
+.temperature-line,
+.active {
+  color: #5f5459;
+  margin: 0 auto;
+}
+
+#temp-number {
+  color: #5f5459;
+  font-size: 60px;
+  text-decoration: none;
+}
+
+.temperature-line {
+  font-size: 40px;
+}
+
+#temp-celsius {
+  color: #5f5459;
+}
+
+#temp-fahrenheit {
+  color: #cdcccd;
+}
+
+#temp-celsius,
+#temp-fahrenheit {
+  font-size: 45px;
+  text-decoration: none;
+}
+
+#temp-celsius:hover,
+#temp-fahrenheit:hover {
+  text-decoration: none;
+}
+
+.side-details {
+  position: sticky;
+  font-size: 9px;
+  color: #7a757d;
+  margin-top: 30px;
+  margin-right: 80px;
+}
+
+.weather-forecast {
+  text-align: center;
+  margin: 20px 10px 0;
+}
+
+.weather-forecast-day {
+  font-size: 14px;
+  color: #565556;
+  opacity: 0.8;
+}
+
+.low-temp {
+  opacity: 0.6;
+  font-size: 13px;
+}
+
+.high-temp {
+  font-size: 13px;
+}
+
+.celsuis-symbol {
+  font-size: 8px;
+}
+
+.page-footer {
+  color: #7a757d;
+  font-size: 10px;
+  text-align: center;
+}
+
+.page-footer-link {
+  color: #4c4b4d;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.page-footer-link:hover {
+  color: #4c4b4d;
+  text-decoration: none;
+}
