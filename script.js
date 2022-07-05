@@ -1,33 +1,37 @@
-// display the current date and time using JavaScript: ie Tuesday 16:00
+// display the current date and time
 
 let now = new Date();
-let hours = now.getHours();
-let minutes = now.getMinutes();
-let dayToday = now.getDay();
-
-if (hours < 10) {
-  hours = `0${hours}`;
+let hour = now.getHours();
+if (hour < 10) {
+  hour = `0${hour}`;
 }
-
-if (minutes < 10) {
-  minutes = `0${minutes}`;
+let minute = now.getMinutes();
+if (minute < 10) {
+  minute = `0${minute}`;
 }
+let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+let day = days[now.getDay()];
 
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
+let months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
 ];
+let month = months[now.getMonth()];
 
 let dayHour = document.querySelector("#city-date-time");
-dayHour.innerHTML = `Last Updated: ${days[dayToday]} ${hours}:${minutes}`;
+dayHour.innerHTML = `<em>Last Updated: ${day} ${now.getDate()} ${month} ${now.getFullYear()}, ${hour}:${minute}</em>`;
 
 // Five Day Forecast
-
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -54,8 +58,11 @@ function displayForecast(response) {
     }@2x.png" alt="" width="42"/>
     
     <div class="weather-forecast-Temperatures">
-    <span class="high-temp">${Math.round(forecastDay.temp.max)}°</span>
-    <span class="low-temp"><em>${Math.round(forecastDay.temp.min)}°</em></span>
+    <span class="high-temp" id="high-temp">${Math.round(forecastDay.temp.max)}°
+    </span>
+    <span class="low-temp" id="low-temp">${Math.round(
+      forecastDay.temp.min
+    )}°</span>
     </div>
     </div>`;
     }
@@ -64,6 +71,22 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+
+function displayForecastFahrenheitTemperature(event) {
+  event.preventDefault();
+
+  let forecastFahrenheit = (maxForecastCelsuisTemperature * 9) / 5 + 32;
+  let displayforecastFahrenheit = document.querySelector("#high-temp");
+  displayforecastFahrenheit.innerHTML = `High: ${Math.round(
+    forecastFahrenheit
+  )}°F`;
+}
+
+let ForecastfahrenheitLink = document.querySelector("#temp-fahrenheit");
+ForecastfahrenheitLink.addEventListener(
+  "click",
+  displayForecastFahrenheitTemperature
+);
 
 function getForecast(coordinates) {
   let apiKey = "4bb9d229a9e1ba598b33d76f997d3e5c";
@@ -84,6 +107,7 @@ function showTemperature(response) {
   cityTemperature.innerHTML = Math.round(response.data.main.temp);
 
   celsuisTemperature = Math.round(response.data.main.temp);
+  celsuisWind = Math.round(response.data.wind.speed * 2.236936);
   maxCelsuisTemperature = Math.round(response.data.main.temp_max);
   minCelsuisTemperature = Math.round(response.data.main.temp_min);
 
@@ -99,9 +123,9 @@ function showTemperature(response) {
   let showHumidity = document.querySelector("#humidityInfo");
   showHumidity.innerHTML = `Humidity: ${displayHumidity}%`;
 
-  let displayWind = Math.round(response.data.wind.speed);
+  let displayWind = Math.round(response.data.wind.speed * 2.236936);
   let showWind = document.querySelector("#windInfo");
-  showWind.innerHTML = `Wind: ${displayWind}km/h`;
+  showWind.innerHTML = `Wind: ${displayWind} mph`;
 
   let displayMainIcon = document.querySelector("#icon");
   displayMainIcon.setAttribute(
@@ -145,6 +169,9 @@ showCurrentLocation.addEventListener("click", getCurrentLocation);
 
 function displayfahrenheitTemperature(event) {
   event.preventDefault();
+  celsuisLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+
   let fahrenheitTemperature = (celsuisTemperature * 9) / 5 + 32;
   let cityTemperature = document.querySelector("#temp-number");
   cityTemperature.innerHTML = Math.round(fahrenheitTemperature);
@@ -156,6 +183,15 @@ function displayfahrenheitTemperature(event) {
   let minFahrenheitTemperature = (minCelsuisTemperature * 9) / 5 + 32;
   let displayMinTemp = document.querySelector("#minTemp");
   displayMinTemp.innerHTML = `Low: ${Math.round(minFahrenheitTemperature)}°F`;
+
+  let displayFahrenheitWind = celsuisWind * 3.6;
+  let showFahrenheitWind = document.querySelector("#windInfo");
+  showFahrenheitWind.innerHTML = `Wind: ${Math.round(
+    displayFahrenheitWind
+  )} km/h`;
+
+  fahrenheitLink.style.color = "#7a757d";
+  celsuisLink.style.color = "#cdcccd";
 }
 
 let fahrenheitLink = document.querySelector("#temp-fahrenheit");
@@ -163,6 +199,9 @@ fahrenheitLink.addEventListener("click", displayfahrenheitTemperature);
 
 function displayCelsuisTemperature(event) {
   event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celsuisLink.classList.add("active");
+
   let cityTemperature = document.querySelector("#temp-number");
   cityTemperature.innerHTML = Math.round(celsuisTemperature);
 
@@ -171,12 +210,20 @@ function displayCelsuisTemperature(event) {
 
   let displayMinTemp = document.querySelector("#minTemp");
   displayMinTemp.innerHTML = `Low: ${Math.round(minCelsuisTemperature)}°C`;
+
+  let displayCelsuisWind = document.querySelector("#windInfo");
+  displayCelsuisWind.innerHTML = `Wind: ${Math.round(celsuisWind)} mph`;
+
+  celsuisLink.style.color = "#7a757d";
+  fahrenheitLink.style.color = "#cdcccd";
 }
 
 let celsuisLink = document.querySelector("#temp-celsius");
 celsuisLink.addEventListener("click", displayCelsuisTemperature);
 
 let celsuisTemperature = null;
+
+let celsuisTempBtn = document.getElementById("#temp-celsius");
 
 //
 
