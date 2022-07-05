@@ -35,13 +35,14 @@ dayHour.innerHTML = `<em>Last Updated: ${day} ${now.getDate()} ${month} ${now.ge
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+  let days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
 
   return days[day];
 }
 
 function displayForecast(response) {
   let forecast = response.data.daily;
+  console.log(response.data.daily);
 
   let forecastElement = document.querySelector("#forecast");
 
@@ -71,22 +72,6 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
-function displayForecastFahrenheitTemperature(event) {
-  event.preventDefault();
-
-  let forecastFahrenheit = (maxForecastCelsuisTemperature * 9) / 5 + 32;
-  let displayforecastFahrenheit = document.querySelector("#high-temp");
-  displayforecastFahrenheit.innerHTML = `High: ${Math.round(
-    forecastFahrenheit
-  )}°F`;
-}
-
-let ForecastfahrenheitLink = document.querySelector("#temp-fahrenheit");
-ForecastfahrenheitLink.addEventListener(
-  "click",
-  displayForecastFahrenheitTemperature
-);
 
 function getForecast(coordinates) {
   let apiKey = "4bb9d229a9e1ba598b33d76f997d3e5c";
@@ -228,9 +213,6 @@ let celsuisLink = document.querySelector("#temp-celsius");
 celsuisLink.addEventListener("click", displayCelsuisTemperature);
 
 let celsuisTemperature = null;
-
-let celsuisTempBtn = document.getElementById("#temp-celsius");
-
 //
 
 searchCity("London");
