@@ -111,6 +111,11 @@ a:hover {
 
 .low-temp {
   opacity: 0.6;
+  font-size: 13px;
+}
+
+.high-temp {
+  font-size: 13px;
 }
 
 .page-footer {
