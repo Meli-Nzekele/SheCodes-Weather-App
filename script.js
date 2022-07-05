@@ -26,6 +26,30 @@ let days = [
 let dayHour = document.querySelector("#city-date-time");
 dayHour.innerHTML = `Last Updated: ${days[dayToday]} ${hours}:${minutes}`;
 
+// Five Day Forecast
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thurs", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-2">
+    <div class="weather-forecast-day">${day}</div>
+    <i class="fa-solid fa-sun weather-icon-day"></i>
+    <br />
+    <span class="high-temp">26°</span>
+    <span class="low-temp"><em>11°</em></span>
+    </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // Search Bar/ Geolocation
 
 function showTemperature(response) {
@@ -131,6 +155,7 @@ celsuisLink.addEventListener("click", displayCelsuisTemperature);
 
 let celsuisTemperature = null;
 
-searchCity("London");
+//
 
-// Weather Icons
+searchCity("London");
+displayForecast();
