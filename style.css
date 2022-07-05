@@ -12,6 +12,11 @@ li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+  cursor: default;
+}
+
 .weather-container {
   padding: 15px;
   margin: 20px auto;
@@ -26,18 +31,6 @@ li {
   padding: 5px 0;
   color: #565556;
   margin-left: 30px;
-}
-
-a {
-  text-decoration: none;
-  color: #595859;
-  font-weight: 500;
-  cursor: default;
-}
-
-a:hover {
-  color: #7a757d;
-  text-decoration: none;
 }
 
 #search-form {
@@ -76,18 +69,32 @@ a:hover {
   -webkit-box-reflect: below -50px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
 }
 
-.display-temperature {
-  font-size: 40px;
+.display-temperature,
+.temperature-line,
+.active {
   color: #7a757d;
+  font-size: 40px;
   margin: 0 auto;
 }
 
 #temp-number {
+  color: #7a757d;
   font-size: 60px;
+  text-decoration: none;
 }
 
-#temp-celsius {
-  font-weight: 100;
+#temp-fahrenheit {
+  color: #cdcccd;
+}
+
+#temp-celsius,
+#temp-fahrenheit {
+  text-decoration: none;
+}
+
+#temp-celsius:hover,
+#temp-fahrenheit:hover {
+  text-decoration: none;
 }
 
 .side-details {
@@ -118,8 +125,23 @@ a:hover {
   font-size: 13px;
 }
 
+.celsuis-symbol {
+  font-size: 8px;
+}
+
 .page-footer {
   color: #7a757d;
   font-size: 10px;
   text-align: center;
+}
+
+.page-footer-link {
+  color: #4c4b4d;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.page-footer-link:hover {
+  color: #4c4b4d;
+  text-decoration: none;
 }
