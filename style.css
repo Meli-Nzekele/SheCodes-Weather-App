@@ -28,14 +28,6 @@ li {
   margin-left: 30px;
 }
 
-.side-details {
-  position: sticky;
-  font-size: 9px;
-  color: #7a757d;
-  margin-top: 30px;
-  margin-right: 80px;
-}
-
 a {
   text-decoration: none;
   color: #595859;
@@ -46,21 +38,6 @@ a {
 a:hover {
   color: #7a757d;
   text-decoration: none;
-}
-
-.display-temperature {
-  font-size: 40px;
-  color: #7a757d;
-  margin-left: 10px;
-  margin-bottom: 50px;
-}
-
-#temp-number {
-  font-size: 60px;
-}
-
-#temp-celsius {
-  font-weight: 100;
 }
 
 #search-form {
@@ -99,8 +76,31 @@ a:hover {
   -webkit-box-reflect: below -50px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
 }
 
-.low-temp {
-  opacity: 0.6;
+.display-temperature {
+  font-size: 40px;
+  color: #7a757d;
+  margin-left: 10px;
+  margin-bottom: 50px;
+}
+
+#temp-number {
+  font-size: 60px;
+}
+
+#temp-celsius {
+  font-weight: 100;
+}
+
+.side-details {
+  position: sticky;
+  font-size: 9px;
+  color: #7a757d;
+  margin-top: 30px;
+  margin-right: 80px;
+}
+
+.weather-forecast {
+  margin-left: 30px;
 }
 
 .weather-forecast-day {
@@ -109,10 +109,14 @@ a:hover {
   opacity: 0.8;
 }
 
+.low-temp {
+  opacity: 0.6;
+}
+
 .weather-icon-day {
   font-size: 30px;
   color: #ec6e4c;
-  margin-bottom: 10px;
+  margin: 8px 0;
   padding: 11px;
   border: 1px solid rgba(0, 0, 255, 0.1);
   border-radius: 10px;
